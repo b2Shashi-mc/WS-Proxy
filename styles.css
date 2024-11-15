@@ -110,16 +110,7 @@ header {
     max-height: 600px; /* Limit the height of the editor */
     overflow-y: auto; /* Enable scrolling if content overflows */
 }
-/* Footer */
-footer {
-    background: #222f36;
-    color: #f8f8f2;
-    text-align: center;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-top: auto; /* Pushes the footer to the bottom of the screen */
-}
+
 .code-editor-container h2 {
     font-size: 1.6rem;
     color: #ffb900;
