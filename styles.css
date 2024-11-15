@@ -68,7 +68,7 @@ header {
     cursor: pointer;
     background-color: #2d3c42;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 1rem; /* Smaller text for radio options */
+    font-size: 0.9rem; /* Even smaller text for API object names */
     color: #b8e0d2;
 }
 
