@@ -244,3 +244,29 @@ pre::-webkit-scrollbar-track {
         transform: scale(1);
     }
 }
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #008b8b, #004d4d);  /* Match the header gradient */
+    color: #f8f8f2;  /* White text for contrast */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    font-weight: 400;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Link Styling in Footer */
+footer a {
+    color: #ffb900;  /* Bright accent color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover, footer a:focus {
+    color: #fff;
+    text-decoration: underline;
+}
+
