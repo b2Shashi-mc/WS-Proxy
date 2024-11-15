@@ -72,9 +72,11 @@ header {
     color: #b8e0d2;
 }
 
-.api-option:hover {
+.api-option:hover, .api-option:focus {
     background-color: #3b4a51;
     transform: translateX(5px); /* Adds a subtle slide effect */
+    outline: 2px solid #ffb900; /* Improved focus visibility */
+    outline-offset: 3px;
 }
 
 .soap-api-list input {
@@ -129,11 +131,12 @@ header {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
-.copy-btn:hover {
+.copy-btn:hover, .copy-btn:focus {
     background-color: #ffb900;
     color: #003c71;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
+    outline: 2px solid #ffb900; /* Focus for accessibility */
 }
 
 .copy-btn i {
@@ -181,9 +184,10 @@ pre::-webkit-scrollbar-track {
     margin-bottom: 16px;
 }
 
-.home-page-btn:hover {
+.home-page-btn:hover, .home-page-btn:focus {
     background-color: #0a9396;
     transform: scale(1.05);
+    outline: 2px solid #ffb900;
 }
 
 /* Responsive Design */
