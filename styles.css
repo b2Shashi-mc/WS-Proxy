@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #4f5b62, #2f3e46); /* A deeper gradient for better contrast */
-    color: #f1f1f1;
+    background: linear-gradient(135deg, #2f3e46, #4f5b62); /* Darker background for modern feel */
+    color: #f8f8f2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,105 +16,116 @@ body {
     padding: 20px;
 }
 
+/* Main Container */
 .container {
     display: flex;
     flex-direction: column;
     max-width: 1200px;
     width: 100%;
-    background-color: #1d2328; /* Dark background for better contrast */
+    background-color: #1d2328;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.8s ease-out;
 }
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #005f73, #0a9396); /* More vibrant gradient */
-    color: #f1f1f1;
+    background: linear-gradient(135deg, #008b8b, #004d4d);
+    color: #f8f8f2;
     text-align: left;
-    padding: 10px 0;
-    font-size: 1.2rem;
-    font-weight: 200;
+    padding: 12px 20px;
+    font-size: 1.25rem; /* Smaller header font size */
+    font-weight: 500;
     letter-spacing: 1px;
 }
 
 /* SOAP API List */
 .soap-api-list {
-    padding: 30px 40px;
+    padding: 20px 30px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     overflow-y: auto;
 }
 
 .soap-api-list h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Smaller section heading */
     font-weight: 600;
-    color: #b8e0d2; /* Softer text color */
-    margin-bottom: 15px;
+    color: #b8e0d2;
+    margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
+/* Styling for the radio buttons and labels */
 .api-option {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 14px 18px;
+    gap: 12px;
+    padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
     background-color: #2d3c42;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem; /* Smaller text for radio options */
     color: #b8e0d2;
 }
 
 .api-option:hover {
-    background-color: #4b6571; /* Darker hover background */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #3b4a51;
+    transform: translateX(5px); /* Adds a subtle slide effect */
 }
 
 .soap-api-list input {
-    transform: scale(1.4);
+    transform: scale(1.3);
 }
 
 .soap-api-list input:checked + label {
     font-weight: bold;
-    color: #ffb900; /* Accent color when selected */
+    color: #ffb900;
 }
 
 .soap-api-list label {
     cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.soap-api-list label:hover {
+    color: #ffb900;
 }
 
 /* Code Editor */
 .code-editor-container {
     width: 100%;
-    padding: 20px 40px;
-    background-color: #222f36; /* Darker background for code area */
+    padding: 18px 30px;
+    background-color: #222f36;
     display: none;
     border-top: 1px solid #444;
     position: relative;
+    transition: transform 0.3s ease;
 }
 
 .code-editor-container h2 {
-    font-size: 1.8rem;
-    color: #ffb900; /* Gold color for heading */
-    margin-bottom: 20px;
+    font-size: 1.6rem; /* Smaller code section heading */
+    color: #ffb900;
+    margin-bottom: 16px;
     font-weight: 600;
 }
 
+/* Button Styles */
 .copy-btn {
-    background-color: #008080; /* More vibrant teal */
+    background-color: #008080;
     color: white;
     border: none;
     border-radius: 8px;
-    padding: 12px 20px;
+    padding: 10px 18px;
     cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem; /* Smaller button font size */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
@@ -122,26 +133,29 @@ header {
     background-color: #ffb900;
     color: #003c71;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
 }
 
 .copy-btn i {
-    margin-right: 8px;
+    margin-right: 6px;
 }
 
+/* Code Block Styling */
 pre {
     max-height: 500px;
     overflow-y: auto;
-    padding: 20px;
+    padding: 16px;
     background-color: #2d2d2d;
     border-radius: 10px;
     border: 1px solid #444;
-    font-size: 1rem;
+    font-size: 0.95rem; /* Smaller font size for code block */
     font-family: 'Source Code Pro', monospace;
     color: #f8f8f2;
+    position: relative;
 }
 
 pre::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 pre::-webkit-scrollbar-thumb {
@@ -153,12 +167,31 @@ pre::-webkit-scrollbar-track {
     background: #444;
 }
 
+/* Home Button */
+.home-page-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #005f73;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem; /* Slightly smaller home button font size */
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 16px;
+}
+
+.home-page-btn:hover {
+    background-color: #0a9396;
+    transform: scale(1.05);
+}
+
 /* Responsive Design */
 @media (min-width: 768px) {
     .container {
         flex-direction: row;
         height: 700px;
-        padding: 40px;
+        padding: 30px;
     }
 
     .soap-api-list {
@@ -171,32 +204,35 @@ pre::-webkit-scrollbar-track {
     }
 
     .home-page-btn {
-        display: inline-block;
-        padding: 12px 24px;
-        background-color: #005f73;
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.2rem;
-        border-radius: 8px;
-        text-align: center;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        margin-bottom: 20px;
-    }
-
-    .home-page-btn:hover {
-        background-color: #0a9396;
-        transform: scale(1.05);
+        margin-bottom: 30px;
     }
 }
 
 @media (max-width: 767px) {
     .soap-api-list {
         width: 100%;
-        padding: 20px;
+        padding: 18px;
     }
 
     .code-editor-container {
         width: 100%;
-        padding: 15px;
+        padding: 14px;
+    }
+
+    .copy-btn {
+        top: 12px;
+        right: 12px;
+    }
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
