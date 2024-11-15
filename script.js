@@ -115,3 +115,21 @@ function RetrieveSoapObject(soapObjectname, cols) {
                 .then(() => alert("Code copied to clipboard!"))
                 .catch(err => console.error("Error copying code: ", err));
         }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the first radio button in the soap-api-list
+    const firstRadioButton = document.querySelector('.soap-api-list input[type="radio"]');
+
+    if (firstRadioButton) {
+        firstRadioButton.checked = true; // Set the first radio button as checked by default
+    }
+
+    // Optional: If you want to trigger any event (e.g., change) after selecting the first item
+    if (firstRadioButton) {
+        const changeEvent = new Event('change');
+        firstRadioButton.dispatchEvent(changeEvent);
+    }
+
+    // You can add more JavaScript logic here for other functionalities if needed
+});
+
