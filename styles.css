@@ -30,10 +30,10 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 0.8s ease-out;
     padding: 20px;
-    padding-bottom: 80px; /* Space for footer */
+    padding-bottom: 100px; /* Space for footer */
     box-sizing: border-box; /* Ensure padding doesn't affect width */
     overflow-y: auto;  /* Allow scrolling if the content overflows */
-    height: 100%;  /* Make sure container can grow with content */
+    height: calc(100vh - 120px);  /* Account for footer height */
 }
 
 /* Header */
@@ -114,7 +114,9 @@ header {
     position: relative;
     transition: transform 0.3s ease;
     max-height: 600px; /* Limit the height of the editor */
-    overflow-y: auto; /* Enable scrolling if content overflows */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+    box-sizing: border-box; /* Prevent content from overflowing */
 }
 
 .code-editor-container h2 {
@@ -208,7 +210,7 @@ pre::-webkit-scrollbar-track {
 @media (min-width: 768px) {
     .container {
         flex-direction: row;
-        height: 700px;
+        height: calc(100vh - 120px); /* Adjust height of container for footer */
         padding: 30px;
     }
 
