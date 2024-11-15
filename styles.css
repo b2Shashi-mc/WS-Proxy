@@ -306,3 +306,30 @@ footer {
         font-size: 0.9rem;  /* Slightly smaller font size */
     }
 }
+
+.copy-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.copy-modal.show {
+    display: block;
+    opacity: 1;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
