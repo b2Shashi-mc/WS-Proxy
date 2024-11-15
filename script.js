@@ -121,7 +121,7 @@ function RetrieveSoapObject(soapObjectname, cols) {
             // After 3 seconds, fade out the modal
             setTimeout(() => {
                 modal.classList.remove("show");
-            }, 3000); // 3 seconds to keep the modal visible before fading out
+            }, 2000); // 2 seconds to keep the modal visible before fading out
         })
         .catch(err => console.error("Error copying code: ", err));
 }
