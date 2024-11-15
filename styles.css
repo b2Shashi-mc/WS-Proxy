@@ -5,10 +5,28 @@
     box-sizing: border-box;
 }
 
+/* CSS Variables for easier color customization */
+:root {
+    --primary-color: #008b8b;
+    --secondary-color: #004d4d;
+    --accent-color: #ffb900;
+    --background-color: #2f3e46;
+    --container-bg-color: #1d2328;
+    --text-color: #f8f8f2;
+    --header-footer-bg: linear-gradient(135deg, #008b8b, #004d4d);
+    --dark-bg: #222f36;
+    --light-bg: #2d2d2d;
+    --border-color: #444;
+    --hover-bg: #3b4a51;
+    --focus-outline: 2px solid #ffb900;
+    --scrollbar-thumb: #ffb900;
+}
+
+/* Body */
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #2f3e46, #4f5b62);
-    color: #f8f8f2;
+    background: linear-gradient(135deg, var(--background-color), #4f5b62);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +42,7 @@ body {
     flex-direction: column;
     max-width: 1200px;
     width: 100%;
-    background-color: #1d2328;
+    background-color: var(--container-bg-color);
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -38,12 +56,12 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #008b8b, #004d4d);
-    color: #f8f8f2;
+    background: var(--header-footer-bg);
+    color: var(--text-color);
     text-align: left;
     padding: 12px 20px;
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 700; /* Enhanced font weight for header */
     letter-spacing: 1px;
 }
 
@@ -57,8 +75,8 @@ header {
 }
 
 .soap-api-list h2 {
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 700; /* Stronger heading weight */
     color: #b8e0d2;
     margin-bottom: 12px;
     text-transform: uppercase;
@@ -74,15 +92,15 @@ header {
     cursor: pointer;
     background-color: #2d3c42;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 0.9rem;
+    font-size: 1rem; /* Slightly larger font for readability */
     color: #b8e0d2;
     will-change: transform; /* Optimization for smoother animations */
 }
 
 .api-option:hover, .api-option:focus {
-    background-color: #3b4a51;
+    background-color: var(--hover-bg);
     transform: translateX(5px);
-    outline: 2px solid #ffb900;
+    outline: var(--focus-outline);
     outline-offset: 3px;
 }
 
@@ -92,7 +110,7 @@ header {
 
 .soap-api-list input:checked + label {
     font-weight: bold;
-    color: #ffb900;
+    color: var(--accent-color);
 }
 
 .soap-api-list label {
@@ -101,16 +119,16 @@ header {
 }
 
 .soap-api-list label:hover {
-    color: #ffb900;
+    color: var(--accent-color);
 }
 
 /* Code Editor */
 .code-editor-container {
     width: 100%;
     padding: 18px 30px;
-    background-color: #222f36;
+    background-color: var(--dark-bg);
     display: none;
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--border-color);
     position: relative;
     transition: transform 0.3s ease;
     max-height: 600px; /* Limit the height of the editor */
@@ -120,15 +138,15 @@ header {
 }
 
 .code-editor-container h2 {
-    font-size: 1.6rem;
-    color: #ffb900;
+    font-size: 1.8rem;
+    color: var(--accent-color);
     margin-bottom: 16px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 /* Button Styles */
 .copy-btn {
-    background-color: #008080;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 8px;
@@ -143,11 +161,11 @@ header {
 }
 
 .copy-btn:hover, .copy-btn:focus {
-    background-color: #ffb900;
+    background-color: var(--accent-color);
     color: #003c71;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
-    outline: 2px solid #ffb900;
+    outline: var(--focus-outline);
 }
 
 .copy-btn:disabled {
@@ -164,12 +182,12 @@ pre {
     max-height: 500px;
     overflow-y: auto;
     padding: 16px;
-    background-color: #2d2d2d;
+    background-color: var(--light-bg);
     border-radius: 10px;
-    border: 1px solid #444;
-    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    font-size: 1rem; /* Increased font size for better readability */
     font-family: 'Source Code Pro', monospace;
-    color: #f8f8f2;
+    color: var(--text-color);
     position: relative;
 }
 
@@ -178,12 +196,12 @@ pre::-webkit-scrollbar {
 }
 
 pre::-webkit-scrollbar-thumb {
-    background: #ffb900;
+    background: var(--scrollbar-thumb);
     border-radius: 5px;
 }
 
 pre::-webkit-scrollbar-track {
-    background: #444;
+    background: var(--border-color);
 }
 
 /* Home Button */
@@ -203,7 +221,7 @@ pre::-webkit-scrollbar-track {
 .home-page-btn:hover, .home-page-btn:focus {
     background-color: #0a9396;
     transform: scale(1.05);
-    outline: 2px solid #ffb900;
+    outline: var(--focus-outline);
 }
 
 /* Responsive Design */
@@ -216,7 +234,7 @@ pre::-webkit-scrollbar-track {
 
     .soap-api-list {
         width: 30%;
-        border-right: 1px solid #444;
+        border-right: 1px solid var(--border-color);
     }
 
     .code-editor-container {
@@ -255,8 +273,8 @@ pre::-webkit-scrollbar-track {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #008b8b, #004d4d);  /* Match the header gradient */
-    color: #f8f8f2;  /* White text for contrast */
+    background: var(--header-footer-bg);
+    color: var(--text-color);
     text-align: center;
     padding: 20px 0;
     font-size: 1rem;
@@ -272,12 +290,12 @@ footer {
 
 /* Link Styling in Footer */
 footer a {
-    color: #ffb900;  /* Bright accent color for links */
+    color: var(--accent-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 footer a:hover, footer a:focus {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: underline;
 }
