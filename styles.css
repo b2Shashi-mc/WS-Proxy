@@ -252,10 +252,12 @@ footer {
     padding: 20px 0;
     font-size: 1rem;
     font-weight: 400;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    position: fixed;  /* Fixed positioning */
+    bottom: 0;  /* Stay at the bottom of the viewport */
+    left: 0;
+    width: 100%;  /* Ensure it spans the entire width */
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10;  /* Ensure it's above other content */
 }
 
 /* Link Styling in Footer */
@@ -269,4 +271,3 @@ footer a:hover, footer a:focus {
     color: #fff;
     text-decoration: underline;
 }
-
