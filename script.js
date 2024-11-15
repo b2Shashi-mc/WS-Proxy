@@ -110,11 +110,22 @@ function RetrieveSoapObject(soapObjectname, cols) {
         }
 
         function copyToClipboard() {
-            const codeText = document.getElementById("code-editor").textContent;
-            navigator.clipboard.writeText(codeText)
-                .then(() => alert("Code copied to clipboard!"))
-                .catch(err => console.error("Error copying code: ", err));
-        }
+    const codeText = document.getElementById("code-editor").textContent;
+    navigator.clipboard.writeText(codeText)
+        .then(() => {
+            const modal = document.getElementById("copyModal");
+            
+            // Show the modal and then fade it out
+            modal.classList.add("show");
+
+            // After 3 seconds, fade out the modal
+            setTimeout(() => {
+                modal.classList.remove("show");
+            }, 3000); // 3 seconds to keep the modal visible before fading out
+        })
+        .catch(err => console.error("Error copying code: ", err));
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Get the first radio button in the soap-api-list
