@@ -48,7 +48,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 0.8s ease-out;
     padding: 20px;
-    padding-bottom: 100px; /* Space for footer */
+    padding-bottom: 50px; /* Space for footer */
     box-sizing: border-box; /* Ensure padding doesn't affect width */
     overflow-y: auto;  /* Allow scrolling if the content overflows */
     height: calc(100vh - 120px);  /* Account for footer height */
@@ -229,7 +229,7 @@ pre::-webkit-scrollbar-track {
     .container {
         flex-direction: row;
         height: calc(100vh - 120px); /* Adjust height of container for footer */
-        padding: 30px;
+        padding: 30px; /* Added more padding for larger screens */
     }
 
     .soap-api-list {
@@ -243,6 +243,10 @@ pre::-webkit-scrollbar-track {
 }
 
 @media (max-width: 767px) {
+    .container {
+        padding: 20px; /* Keep padding consistent for smaller screens */
+    }
+
     .soap-api-list {
         width: 100%;
         padding: 18px;
@@ -273,11 +277,11 @@ pre::-webkit-scrollbar-track {
 
 /* Footer */
 footer {
-    background: var(--header-footer-bg);
-    color: var(--text-color);
+    background: var(--header-footer-bg);  /* Match the header gradient */
+    color: var(--text-color);  /* White text for contrast */
     text-align: center;
     padding: 20px 0;
-    font-size: 1rem; /* Optimized size for readability */
+    font-size: 1rem;
     font-weight: 400;
     position: fixed;  /* Fixed positioning */
     bottom: 0;  /* Stay at the bottom of the viewport */
@@ -290,7 +294,7 @@ footer {
 
 /* Link Styling in Footer */
 footer a {
-    color: var(--accent-color);
+    color: var(--accent-color);  /* Bright accent color for links */
     text-decoration: none;
     transition: color 0.3s ease;
 }
