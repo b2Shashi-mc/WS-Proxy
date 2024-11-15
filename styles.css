@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.3s ease;  /* Ensure smooth transitions */
 }
 
 /* CSS Variables for easier color customization */
@@ -20,6 +21,7 @@
     --hover-bg: #3b4a51;
     --focus-outline: 2px solid #ffb900;
     --scrollbar-thumb: #ffb900;
+    --disabled-bg: #444;
 }
 
 /* Body */
@@ -32,8 +34,9 @@ body {
     align-items: center;
     min-height: 100vh;
     position: relative;
-    overflow-x: hidden;  /* Hide horizontal scrollbar */
-    padding-bottom: 20px;  /* Only add bottom padding */
+    overflow-x: hidden;
+    padding-bottom: 20px;
+    line-height: 1.5;  /* Improved readability */
 }
 
 /* Main Container */
@@ -45,18 +48,16 @@ body {
     background-color: var(--container-bg-color);
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 0.8s ease-out;
-    padding: 10px 10px;  /* Reduced padding on smaller screens */
-    box-sizing: border-box;
-    overflow-y: auto;  /* Allow scrolling if content overflows */
-    height: auto; /* Let the container height adjust based on content */
+    padding: 10px 10px;
+    overflow-y: auto;
+    height: auto;
 }
 
 /* Adjust container padding on larger screens */
 @media (min-width: 768px) {
     .container {
-        padding: 30px;  /* More padding on larger screens */
+        padding: 30px;
     }
 }
 
@@ -66,9 +67,10 @@ header {
     color: var(--text-color);
     text-align: left;
     padding: 16px 24px;
-    font-size: 1.75rem; /* Increased size for better hierarchy */
+    font-size: 1.75rem;
     font-weight: 700;
     letter-spacing: 1px;
+    border-bottom: 2px solid var(--border-color); /* Added subtle border to define header */
 }
 
 /* SOAP API List */
@@ -78,37 +80,42 @@ header {
     flex-direction: column;
     gap: 16px;
     overflow-y: auto;
-    width: 100%;  /* Ensure it takes the full width on mobile */
 }
 
 .soap-api-list h2 {
-    font-size: 1.8rem; /* Increased header size */
-    font-weight: 700; /* Stronger heading weight */
+    font-size: 1.8rem;
+    font-weight: 700;
     color: #b8e0d2;
     margin-bottom: 12px;
     text-transform: uppercase;
 }
 
-/* Styling for the radio buttons and labels */
 .api-option {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 18px; /* Increased padding for better click area */
+    padding: 12px 18px;
     border-radius: 8px;
     cursor: pointer;
     background-color: #2d3c42;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 1rem; /* Slightly larger font for readability */
+    font-size: 1rem;
     color: #b8e0d2;
-    will-change: transform; /* Optimization for smoother animations */
+    will-change: transform;
+    border: 1px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth border color transitions */
 }
 
 .api-option:hover, .api-option:focus {
     background-color: var(--hover-bg);
     transform: translateX(5px);
     outline: var(--focus-outline);
-    outline-offset: 3px;
+    border-color: var(--accent-color); /* Added border highlight for focus */
+}
+
+/* Focused state for keyboard navigation */
+.api-option:focus-visible {
+    outline: var(--focus-outline);
 }
 
 .soap-api-list input {
@@ -134,17 +141,14 @@ header {
     width: 100%;
     padding: 18px 30px;
     background-color: var(--dark-bg);
-    display: none;
     border-top: 1px solid var(--border-color);
     position: relative;
-    transition: transform 0.3s ease;
-    max-height: 600px; /* Limit the height of the editor */
+    max-height: 600px;
     overflow-y: auto;
-    box-sizing: border-box;
 }
 
 .code-editor-container h2 {
-    font-size: 1.8rem; /* Larger size for the section header */
+    font-size: 1.8rem;
     color: var(--accent-color);
     margin-bottom: 16px;
     font-weight: 700;
@@ -156,9 +160,9 @@ header {
     color: white;
     border: none;
     border-radius: 8px;
-    padding: 12px 20px; /* Expanded padding for larger click area */
+    padding: 12px 20px;
     cursor: pointer;
-    font-size: 1rem; /* Slightly larger font for readability */
+    font-size: 1rem;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: absolute;
     top: 15px;
@@ -171,16 +175,11 @@ header {
     color: #003c71;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
-    outline: var(--focus-outline);
 }
 
 .copy-btn:disabled {
-    background-color: #444;
+    background-color: var(--disabled-bg);
     cursor: not-allowed;
-}
-
-.copy-btn i {
-    margin-right: 6px;
 }
 
 /* Code Block Styling */
@@ -191,7 +190,7 @@ pre {
     background-color: var(--light-bg);
     border-radius: 10px;
     border: 1px solid var(--border-color);
-    font-size: 1rem; /* Slightly larger font size for better readability */
+    font-size: 1rem;
     font-family: 'Source Code Pro', monospace;
     color: var(--text-color);
     position: relative;
@@ -213,11 +212,11 @@ pre::-webkit-scrollbar-track {
 /* Home Button */
 .home-page-btn {
     display: inline-block;
-    padding: 12px 24px; /* Slightly larger for better usability */
+    padding: 12px 24px;
     background-color: #005f73;
     color: #fff;
     text-decoration: none;
-    font-size: 1.1rem; /* Slightly larger for better readability */
+    font-size: 1.1rem;
     border-radius: 8px;
     text-align: center;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -234,8 +233,8 @@ pre::-webkit-scrollbar-track {
 @media (min-width: 768px) {
     .container {
         flex-direction: row;
-        height: calc(100vh - 120px); /* Adjust height of container for footer */
-        padding: 30px; /* Added more padding for larger screens */
+        height: calc(100vh - 120px);
+        padding: 30px;
     }
 
     .soap-api-list {
@@ -250,34 +249,22 @@ pre::-webkit-scrollbar-track {
 
 @media (max-width: 767px) {
     .container {
-        padding: 15px;  /* Reduced padding for smaller screens */
+        padding: 15px;
     }
 
     .soap-api-list {
         width: 100%;
-        padding: 15px 20px;  /* Adjust padding for better spacing */
+        padding: 15px 20px;
     }
 
     .code-editor-container {
         width: 100%;
-        padding: 10px 15px;  /* Adjust padding for better mobile experience */
+        padding: 10px 15px;
     }
 
     .copy-btn {
         top: 10px;
         right: 10px;
-    }
-}
-
-/* Animation for fade-in effect */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -294,42 +281,39 @@ footer {
     left: 0;
     width: 100%;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-    margin-top: 10px;  /* Space between content and footer */
-    padding-bottom: 10px;  /* Reduced padding to minimize footer size */
 }
 
-/* Adjust footer spacing for mobile view */
-@media (max-width: 767px) {
-    footer {
-        padding: 16px 0;
-        font-size: 0.9rem;  /* Slightly smaller font size */
-    }
-}
-
+/* Modal */
 .copy-modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border-radius: 5px;
-    font-size: 16px;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 1s ease-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-out;
 }
 
 .copy-modal.show {
-    display: block;
-    opacity: 1;
+    display: flex;
 }
 
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+.copy-modal-content {
+    background-color: var(--dark-bg);
+    padding: 30px;
+    border-radius: 10px;
+    color: var(--text-color);
+    text-align: center;
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
