@@ -1,5 +1,4 @@
- <script>
-        const ssjsTemplate = `
+const ssjsTemplate = `
 &lt;script runat&#x3D;&quot;server&quot;&gt;
 Platform.Load(&quot;core&quot;, &quot;1&quot;);
 try {
@@ -116,4 +115,3 @@ function RetrieveSoapObject(soapObjectname, cols) {
                 .then(() => alert("Code copied to clipboard!"))
                 .catch(err => console.error("Error copying code: ", err));
         }
-    </script>
