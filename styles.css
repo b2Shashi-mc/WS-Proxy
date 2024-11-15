@@ -10,9 +10,9 @@ body {
     background: linear-gradient(135deg, #2f3e46, #4f5b62);
     color: #f8f8f2;
     display: flex;
-    flex-direction: column; /* Ensure the body contents are stacked vertically */
-    justify-content: space-between; /* Space between header, content, and footer */
-    min-height: 100vh; /* Make sure the body takes up the full height of the viewport */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 20px;
 }
 
@@ -28,18 +28,6 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 0.8s ease-out;
-    flex: 1; /* Ensures the container can grow and fill the available space */
-}
-
-/* Footer */
-footer {
-    background: #222f36;
-    color: #f8f8f2;
-    text-align: center;
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-top: auto; /* Pushes the footer to the bottom of the screen */
 }
 
 /* Header */
@@ -70,13 +58,82 @@ header {
     text-transform: uppercase;
 }
 
+/* Styling for the radio buttons and labels */
+.api-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #2d3c42;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 0.9rem;
+    color: #b8e0d2;
+    will-change: transform; /* Optimization for smoother animations */
+}
+
+.api-option:hover, .api-option:focus {
+    background-color: #3b4a51;
+    transform: translateX(5px);
+    outline: 2px solid #ffb900;
+    outline-offset: 3px;
+}
+
+.soap-api-list input {
+    transform: scale(1.3);
+}
+
+.soap-api-list input:checked + label {
+    font-weight: bold;
+    color: #ffb900;
+}
+
+.soap-api-list label {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.soap-api-list label:hover {
+    color: #ffb900;
+}
+
+/* Code Editor */
+.code-editor-container {
+    width: 100%;
+    padding: 18px 30px;
+    background-color: #222f36;
+    display: none;
+    border-top: 1px solid #444;
+    position: relative;
+    transition: transform 0.3s ease;
+    max-height: 600px; /* Limit the height of the editor */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+/* Footer */
+footer {
+    background: #222f36;
+    color: #f8f8f2;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: auto; /* Pushes the footer to the bottom of the screen */
+}
+.code-editor-container h2 {
+    font-size: 1.6rem;
+    color: #ffb900;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
 /* Button Styles */
 .copy-btn {
     background-color: #008080;
     color: white;
     border: none;
     border-radius: 8px;
-    padding: 12px 20px;
+    padding: 12px 20px; /* Expanded padding for larger click area */
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -101,6 +158,53 @@ header {
 
 .copy-btn i {
     margin-right: 6px;
+}
+
+/* Code Block Styling */
+pre {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 16px;
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    border: 1px solid #444;
+    font-size: 0.95rem;
+    font-family: 'Source Code Pro', monospace;
+    color: #f8f8f2;
+    position: relative;
+}
+
+pre::-webkit-scrollbar {
+    width: 8px;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background: #ffb900;
+    border-radius: 5px;
+}
+
+pre::-webkit-scrollbar-track {
+    background: #444;
+}
+
+/* Home Button */
+.home-page-btn {
+    display: inline-block;
+    padding: 12px 24px; /* Slightly larger for better usability */
+    background-color: #005f73;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.home-page-btn:hover, .home-page-btn:focus {
+    background-color: #0a9396;
+    transform: scale(1.05);
+    outline: 2px solid #ffb900;
 }
 
 /* Responsive Design */
