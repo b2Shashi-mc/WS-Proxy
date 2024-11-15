@@ -47,7 +47,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 0.8s ease-out;
-    padding: 20px 10px;  /* Reduced padding on smaller screens */
+    padding: 10px 10px;  /* Reduced padding on smaller screens */
     box-sizing: border-box;
     overflow-y: auto;  /* Allow scrolling if content overflows */
     height: auto; /* Let the container height adjust based on content */
