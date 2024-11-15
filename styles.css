@@ -47,11 +47,17 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 0.8s ease-out;
-    padding: 20px;
-    padding-bottom: 50px; /* Space for footer */
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
-    overflow-y: auto;  /* Allow scrolling if the content overflows */
-    height: calc(100vh - 120px);  /* Account for footer height */
+    padding: 20px 10px;  /* Reduced padding on smaller screens */
+    box-sizing: border-box;
+    overflow-y: auto;  /* Allow scrolling if content overflows */
+    height: auto; /* Let the container height adjust based on content */
+}
+
+/* Adjust container padding on larger screens */
+@media (min-width: 768px) {
+    .container {
+        padding: 30px;  /* More padding on larger screens */
+    }
 }
 
 /* Header */
@@ -72,6 +78,7 @@ header {
     flex-direction: column;
     gap: 16px;
     overflow-y: auto;
+    width: 100%;  /* Ensure it takes the full width on mobile */
 }
 
 .soap-api-list h2 {
@@ -132,9 +139,8 @@ header {
     position: relative;
     transition: transform 0.3s ease;
     max-height: 600px; /* Limit the height of the editor */
-    overflow-y: auto; /* Enable vertical scrolling if content overflows */
-    overflow-x: auto; /* Enable horizontal scrolling if content overflows */
-    box-sizing: border-box; /* Prevent content from overflowing */
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .code-editor-container h2 {
@@ -244,22 +250,22 @@ pre::-webkit-scrollbar-track {
 
 @media (max-width: 767px) {
     .container {
-        padding: 20px; /* Keep padding consistent for smaller screens */
+        padding: 15px;  /* Reduced padding for smaller screens */
     }
 
     .soap-api-list {
         width: 100%;
-        padding: 18px;
+        padding: 15px 20px;  /* Adjust padding for better spacing */
     }
 
     .code-editor-container {
         width: 100%;
-        padding: 14px;
+        padding: 10px 15px;  /* Adjust padding for better mobile experience */
     }
 
     .copy-btn {
-        top: 12px;
-        right: 12px;
+        top: 10px;
+        right: 10px;
     }
 }
 
@@ -277,29 +283,26 @@ pre::-webkit-scrollbar-track {
 
 /* Footer */
 footer {
-    background: var(--header-footer-bg);  /* Match the header gradient */
-    color: var(--text-color);  /* White text for contrast */
+    background: var(--header-footer-bg);
+    color: var(--text-color);
     text-align: center;
     padding: 20px 0;
     font-size: 1rem;
     font-weight: 400;
-    position: fixed;  /* Fixed positioning */
-    bottom: 0;  /* Stay at the bottom of the viewport */
+    position: fixed;
+    bottom: 0;
     left: 0;
-    width: 100%;  /* Ensure it spans the entire width */
+    width: 100%;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;  /* Ensure it's above other content */
+    z-index: 10;
     margin-top: 10px;  /* Space between content and footer */
+    padding-bottom: 10px;  /* Reduced padding to minimize footer size */
 }
 
-/* Link Styling in Footer */
-footer a {
-    color: var(--accent-color);  /* Bright accent color for links */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover, footer a:focus {
-    color: var(--text-color);
-    text-decoration: underline;
+/* Adjust footer spacing for mobile view */
+@media (max-width: 767px) {
+    footer {
+        padding: 16px 0;
+        font-size: 0.9rem;  /* Slightly smaller font size */
+    }
 }
