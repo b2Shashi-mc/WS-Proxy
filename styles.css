@@ -16,6 +16,7 @@ body {
     padding: 20px;
     position: relative;
     overflow: hidden;  /* Hide body scrollbar */
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 /* Main Container */
@@ -30,6 +31,7 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 0.8s ease-out;
+    padding: 20px;
 }
 
 /* Header */
@@ -73,6 +75,7 @@ header {
     font-size: 0.9rem;
     color: #b8e0d2;
     will-change: transform; /* Optimization for smoother animations */
+    transform: translateZ(0); /* Trigger GPU acceleration */
 }
 
 .api-option:hover, .api-option:focus {
@@ -94,6 +97,7 @@ header {
 .soap-api-list label {
     cursor: pointer;
     transition: color 0.3s ease;
+    margin-left: 10px; /* Add spacing between label and input */
 }
 
 .soap-api-list label:hover {
@@ -142,6 +146,11 @@ header {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
     outline: 2px solid #ffb900;
+}
+
+.copy-btn:active {
+    transform: scale(0.98); /* Button shrink on click */
+    background-color: #005f73;
 }
 
 .copy-btn:disabled {
@@ -239,13 +248,14 @@ pre::-webkit-scrollbar-track {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: scale(0.95);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
     }
 }
+
 /* Footer */
 footer {
     background: linear-gradient(135deg, #008b8b, #004d4d);  /* Match the header gradient */
@@ -258,7 +268,7 @@ footer {
     bottom: 0;  /* Stay at the bottom of the viewport */
     left: 0;
     width: 100%;  /* Ensure it spans the entire width */
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
     z-index: 10;  /* Ensure it's above other content */
 }
 
