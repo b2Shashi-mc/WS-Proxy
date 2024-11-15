@@ -15,8 +15,7 @@ body {
     min-height: 100vh;
     padding: 20px;
     position: relative;
-    overflow: hidden;  /* Hide body scrollbar */
-    scroll-behavior: smooth; /* Smooth scrolling */
+    overflow-x: hidden;  /* Hide horizontal scrollbar */
 }
 
 /* Main Container */
@@ -28,12 +27,13 @@ body {
     background-color: #1d2328;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 0.8s ease-out;
     padding: 20px;
-    padding-bottom: 80px; /* Add space for footer */
+    padding-bottom: 80px; /* Space for footer */
     box-sizing: border-box; /* Ensure padding doesn't affect width */
+    overflow-y: auto;  /* Allow scrolling if the content overflows */
+    height: 100%;  /* Make sure container can grow with content */
 }
 
 /* Header */
@@ -77,7 +77,6 @@ header {
     font-size: 0.9rem;
     color: #b8e0d2;
     will-change: transform; /* Optimization for smoother animations */
-    transform: translateZ(0); /* Trigger GPU acceleration */
 }
 
 .api-option:hover, .api-option:focus {
@@ -99,7 +98,6 @@ header {
 .soap-api-list label {
     cursor: pointer;
     transition: color 0.3s ease;
-    margin-left: 10px; /* Add spacing between label and input */
 }
 
 .soap-api-list label:hover {
@@ -148,11 +146,6 @@ header {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
     outline: 2px solid #ffb900;
-}
-
-.copy-btn:active {
-    transform: scale(0.98); /* Button shrink on click */
-    background-color: #005f73;
 }
 
 .copy-btn:disabled {
@@ -272,6 +265,7 @@ footer {
     width: 100%;  /* Ensure it spans the entire width */
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
     z-index: 10;  /* Ensure it's above other content */
+    margin-top: 10px;  /* Space between content and footer */
 }
 
 /* Link Styling in Footer */
