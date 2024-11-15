@@ -32,6 +32,8 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 0.8s ease-out;
     padding: 20px;
+    padding-bottom: 80px; /* Add space for footer */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 /* Header */
