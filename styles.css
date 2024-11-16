@@ -118,7 +118,7 @@ header {
     border-radius: 8px;
     cursor: pointer;
     background-color: #2d3c42;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: var(--text-color);
     will-change: transform;
     border: 1px solid transparent;
