@@ -29,7 +29,7 @@
         <!-- Left Section: SOAP API Object List -->
         <div class="soap-api-list">
             <a class="home-page-btn" href="https://b2shashi.blogspot.com/" role="button">AMPScriptify</a>
-            <h2>SOAP API Object</h2>
+            <h2>SFMC SOAP API Objects</h2>
             <div class="api-option">
                 <input type="radio" name="soapApi" value="Account" onchange="onApiSelect('Account')" id="apiAccount">
                 <label for="apiAccount">Account</label>
@@ -45,6 +45,11 @@
                 <label for="apiBounceEvent">BounceEvent</label>
             </div>
             <div class="api-option">
+                <input type="radio" name="soapApi" value="BusinessUnit" onchange="onApiSelect('BusinessUnit')"
+                    id="apiBusinessUnit">
+                <label for="apiBusinessUnit">BusinessUnit</label>
+            </div>
+            <div class="api-option">
                 <input type="radio" name="soapApi" value="ClickEvent" onchange="onApiSelect('ClickEvent')"
                     id="apiClickEvent">
                 <label for="apiClickEvent">ClickEvent</label>
@@ -53,6 +58,21 @@
                 <input type="radio" name="soapApi" value="DataExtension" onchange="onApiSelect('DataExtension')"
                     id="apiDataExtension">
                 <label for="apiDataExtension">DataExtension</label>
+            </div>
+            <div class="api-option">
+                <input type="radio" name="soapApi" value="DataFolder" onchange="onApiSelect('DataFolder')"
+                    id="apiDataFolder">
+                <label for="apiDataFolder">DataFolder</label>
+            </div>
+            <div class="api-option">
+                <input type="radio" name="soapApi" value="ForwardedEmailEvent" onchange="onApiSelect('ForwardedEmailEvent')"
+                    id="apiForwardedEmailEvent">
+                <label for="apiForwardedEmailEvent">ForwardedEmailEvent</label>
+            </div>
+            <div class="api-option">
+                <input type="radio" name="soapApi" value="GlobalUnsubscribeCategory" onchange="onApiSelect('GlobalUnsubscribeCategory')"
+                    id="apiGlobalUnsubscribeCategory">
+                <label for="apiGlobalUnsubscribeCategory">GlobalUnsubscribeCategory</label>
             </div>
             <div class="api-option">
                 <input type="radio" name="soapApi" value="ImportDefinition" onchange="onApiSelect('ImportDefinition')"
@@ -65,14 +85,19 @@
                 <label for="apiImportResultsSummary">ImportResultsSummary</label>
             </div>
             <div class="api-option">
+                <input type="radio" name="soapApi" value="LinkSend" onchange="onApiSelect('LinkSend')"
+                    id="apiLinkSend">
+                <label for="apiLinkSend">LinkSend</label>
+            </div>
+            <div class="api-option">
+                <input type="radio" name="soapApi" value="ListSend" onchange="onApiSelect('ListSend')"
+                    id="apiListSend">
+                <label for="apiListSend">ListSend</label>
+            </div>
+            <div class="api-option">
                 <input type="radio" name="soapApi" value="ListSubscriber" onchange="onApiSelect('ListSubscriber')"
                     id="apiListSubscriber">
                 <label for="apiListSubscriber">ListSubscriber</label>
-            </div>
-            <div class="api-option">
-                <input type="radio" name="soapApi" value="Publication" onchange="onApiSelect('Publication')"
-                    id="apiPublication">
-                <label for="apiPublication">Publication</label>
             </div>
             <div class="api-option">
                 <input type="radio" name="soapApi" value="NotSentEvent" onchange="onApiSelect('NotSentEvent')"
@@ -85,9 +110,24 @@
                 <label for="apiOpenEvent">OpenEvent</label>
             </div>
             <div class="api-option">
+                <input type="radio" name="soapApi" value="Publication" onchange="onApiSelect('Publication')"
+                    id="apiPublication">
+                <label for="apiPublication">Publication</label>
+            </div>
+            <div class="api-option">
                 <input type="radio" name="soapApi" value="QueryDefinition" onchange="onApiSelect('QueryDefinition')"
                     id="apiQueryDefinition">
                 <label for="apiQueryDefinition">QueryDefinition</label>
+            </div>
+            <div class="api-option">
+                <input type="radio" name="soapApi" value="SendClassification" onchange="onApiSelect('SendClassification')"
+                    id="apiSendClassification">
+                <label for="apiSendClassification">SendClassification</label>
+            </div>
+            <div class="api-option">
+                <input type="radio" name="soapApi" value="SenderProfile" onchange="onApiSelect('SenderProfile')"
+                    id="apiSenderProfile">
+                <label for="apiSenderProfile">SenderProfile</label>
             </div>
             <div class="api-option">
                 <input type="radio" name="soapApi" value="SendSummary" onchange="onApiSelect('SendSummary')"
@@ -105,9 +145,19 @@
                 <label for="apiSubscriber">Subscriber</label>
             </div>
             <div class="api-option">
+                <input type="radio" name="soapApi" value="SuppressionListContext" onchange="onApiSelect('SuppressionListContext')"
+                    id="apiSuppressionListContext">
+                <label for="apiSuppressionListContext">SuppressionListContext</label>
+            </div>
+            <div class="api-option">
+                <input type="radio" name="soapApi" value="SuppressionListDefinition" onchange="onApiSelect('SuppressionListDefinition')"
+                    id="apiSuppressionListDefinition">
+                <label for="apiSuppressionListDefinition">SuppressionListDefinition</label>
+            </div>
+            <div class="api-option">
                 <input type="radio" name="soapApi" value="TriggeredSendSummary"
                     onchange="onApiSelect('TriggeredSendSummary')" id="apiTriggeredSendSummary">
-                <label for="apiTriggeredSendSummary">TriggeredSend</label>
+                <label for="apiTriggeredSendSummary">TriggeredSendSummary</label>
             </div>
             <div class="api-option">
                 <input type="radio" name="soapApi" value="UnsubEvent" onchange="onApiSelect('UnsubEvent')"
