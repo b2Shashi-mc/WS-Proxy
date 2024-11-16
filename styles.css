@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.3s ease;  /* Ensure smooth transitions */
 }
 
 /* CSS Variables for easier color customization */
@@ -24,6 +23,23 @@
     --disabled-bg: #444;
 }
 
+/* Light Theme Variables */
+[data-theme="light"] {
+    --primary-color: #005f73;
+    --secondary-color: #94d2bd;
+    --accent-color: #ee9b00;
+    --background-color: #ffffff;
+    --container-bg-color: #f0f0f0;
+    --text-color: #333333;
+    --header-footer-bg: linear-gradient(135deg, #005f73, #0a9396);
+    --dark-bg: #e5e5e5;
+    --light-bg: #ffffff;
+    --border-color: #ddd;
+    --hover-bg: #f0f0f0;
+    --scrollbar-thumb: #ee9b00;
+    --disabled-bg: #ccc;
+}
+
 /* Body */
 body {
     font-family: 'Roboto', sans-serif;
@@ -37,6 +53,7 @@ body {
     overflow-x: hidden;
     padding-bottom: 20px;
     line-height: 1.5;  /* Improved readability */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Main Container */
@@ -52,12 +69,14 @@ body {
     padding: 10px 10px;
     overflow-y: auto;
     height: auto;
+    transition: background-color 0.3s ease;
 }
 
-/* Adjust container padding on larger screens */
 @media (min-width: 768px) {
     .container {
         padding: 30px;
+        flex-direction: row;
+        height: calc(100vh - 120px);
     }
 }
 
@@ -70,7 +89,8 @@ header {
     font-size: 1.75rem;
     font-weight: 700;
     letter-spacing: 1px;
-    border-bottom: 2px solid var(--border-color); /* Added subtle border to define header */
+    border-bottom: 2px solid var(--border-color);
+    transition: background 0.3s ease;
 }
 
 /* SOAP API List */
@@ -85,7 +105,7 @@ header {
 .soap-api-list h2 {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #b8e0d2;
+    color: var(--accent-color);
     margin-bottom: 12px;
     text-transform: uppercase;
 }
@@ -98,42 +118,22 @@ header {
     border-radius: 8px;
     cursor: pointer;
     background-color: #2d3c42;
-    transition: background-color 0.3s ease, transform 0.3s ease;
     font-size: 1rem;
-    color: #b8e0d2;
+    color: var(--text-color);
     will-change: transform;
     border: 1px solid transparent;
-    transition: background-color 0.3s, border-color 0.3s; /* Smooth border color transitions */
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
-.api-option:hover, .api-option:focus {
+.api-option:hover,
+.api-option:focus {
     background-color: var(--hover-bg);
     transform: translateX(5px);
-    outline: var(--focus-outline);
-    border-color: var(--accent-color); /* Added border highlight for focus */
+    border-color: var(--accent-color);
 }
 
-/* Focused state for keyboard navigation */
 .api-option:focus-visible {
     outline: var(--focus-outline);
-}
-
-.soap-api-list input {
-    transform: scale(1.3);
-}
-
-.soap-api-list input:checked + label {
-    font-weight: bold;
-    color: var(--accent-color);
-}
-
-.soap-api-list label {
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.soap-api-list label:hover {
-    color: var(--accent-color);
 }
 
 /* Code Editor */
@@ -145,6 +145,7 @@ header {
     position: relative;
     max-height: 600px;
     overflow-y: auto;
+    transition: background-color 0.3s ease;
 }
 
 .code-editor-container h2 {
@@ -163,90 +164,42 @@ header {
     padding: 12px 20px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: absolute;
     top: 15px;
     right: 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
-.copy-btn:hover, .copy-btn:focus {
+.copy-btn:hover,
+.copy-btn:focus {
     background-color: var(--accent-color);
     color: #003c71;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
 }
 
-.copy-btn:disabled {
-    background-color: var(--disabled-bg);
-    cursor: not-allowed;
-}
-
-/* Code Block Styling */
-pre {
-    max-height: 500px;
-    overflow-y: auto;
-    padding: 16px;
-    background-color: var(--light-bg);
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
-    font-size: 1rem;
-    font-family: 'Source Code Pro', monospace;
-    color: var(--text-color);
-    position: relative;
-}
-
-pre::-webkit-scrollbar {
-    width: 8px;
-}
-
-pre::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb);
-    border-radius: 5px;
-}
-
-pre::-webkit-scrollbar-track {
-    background: var(--border-color);
-}
-
 /* Home Button */
 .home-page-btn {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #005f73;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     text-decoration: none;
     font-size: 1.1rem;
     border-radius: 8px;
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
     margin-bottom: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.home-page-btn:hover, .home-page-btn:focus {
-    background-color: #0a9396;
+.home-page-btn:hover,
+.home-page-btn:focus {
+    background-color: var(--accent-color);
     transform: scale(1.05);
-    outline: var(--focus-outline);
 }
 
 /* Responsive Design */
-@media (min-width: 768px) {
-    .container {
-        flex-direction: row;
-        height: calc(100vh - 120px);
-        padding: 30px;
-    }
-
-    .soap-api-list {
-        width: 30%;
-        border-right: 1px solid var(--border-color);
-    }
-
-    .code-editor-container {
-        width: 70%;
-    }
-}
-
 @media (max-width: 767px) {
     .container {
         padding: 15px;
@@ -260,11 +213,6 @@ pre::-webkit-scrollbar-track {
     .code-editor-container {
         width: 100%;
         padding: 10px 15px;
-    }
-
-    .copy-btn {
-        top: 10px;
-        right: 10px;
     }
 }
 
