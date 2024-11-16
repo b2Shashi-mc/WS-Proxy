@@ -84,7 +84,10 @@ function ApplyFilter(prop, operator, value) {
 function RetrieveSoapObject(soapObjectname, cols) {
   &#x2F;&#x2F; Create a new instance of WSProxy to interact with the SOAP object.
   var api &#x3D; new Script.Util.WSProxy();
-  
+  api.setClientId({
+    &quot;ID&quot;: Platform.Function.AuthenticatedMemberID(),
+    &quot;UserID&quot;: Platform.Function.AuthenticatedEmployeeID()
+});
   &#x2F;&#x2F; Call the retrieve method of WSProxy to fetch data from the SOAP object.
   var response &#x3D; api.retrieve(soapObjectname, cols);
 
