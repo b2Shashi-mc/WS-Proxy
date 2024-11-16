@@ -152,4 +152,9 @@ document.addEventListener('keydown', function(event) {
         event.preventDefault();
     }
 });
+document.querySelector(".theme-toggle-btn").addEventListener("click", () => {
+    const currentTheme = document.documentElement.dataset.theme || "dark";
+    document.documentElement.dataset.theme = currentTheme === "dark" ? "light" : "dark";
+});
+
 
