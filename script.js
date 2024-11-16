@@ -8,8 +8,11 @@ try {
   &#x2F;&#x2F; Call the function &#39;DescribeSoapObject&#39; to retrieve the metadata information for the SOAP object.
   var soapMetaData &#x3D; DescribeSoapObject(soapObject);
 
+  &#x2F;&#x2F; Extract the properties array from the soapMetaData.
+  var properties &#x3D; soapMetaData.Results[0].Properties;
+
   &#x2F;&#x2F; Fetch the properties of the SOAP object that are available for retrieval.
-  var properties &#x3D; FetchRetrieveableProperties(soapMetaData);
+  var cols &#x3D; FetchRetrieveableProperties(properties);
 
 
   &#x2F;&#x2F; Call the function &#39;RetrieveSoapObject&#39; to retrieve data from the SOAP object using the specified filter and columns.
